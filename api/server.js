@@ -17,6 +17,9 @@ mongoose.connect(mongoURI)
 // Define the schema
 const TodoSchema = new mongoose.Schema({
     title: { type: String, required: true },
+    description: { type: String, default: "" },
+    priority: { type: Number, default: 0 },
+    user: { type: String, default: "Anonymous" },
     completed: { type: Boolean, default: false },
     createdAt: { type: Date, default: Date.now }
 });
@@ -24,7 +27,7 @@ const TodoSchema = new mongoose.Schema({
 // Todo is a model we can use to interact with the "todos" collection in Mongo (Mongoose pluralizes the database names by default)
 const Todo = mongoose.model('Todo', TodoSchema); // 'Todo' becomes "todos" in Mongo
 
-const testData = [{id:1, title:"Sample Task", done:false}, {id:2, title:"Sample Task 2", done:true}]
+// const testData = [{id:1, title:"Sample Task", done:false}, {id:2, title:"Sample Task 2", done:true}]
 
 app.route('/api/todos')
     .get(async (req, res) => {
