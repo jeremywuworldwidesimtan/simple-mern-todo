@@ -5,6 +5,9 @@ require('dotenv').config();
 const app = express();
 const PORT = 3200;
 
+// Development only
+app.use(require('cors')())
+
 app.use(express.json())
 app.use(morgan('dev'))
 
