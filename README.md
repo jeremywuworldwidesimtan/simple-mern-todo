@@ -1,5 +1,5 @@
 # simple-mern-todo
-Simple to-do list web app made using MERN stack with Vite for React andf TailwindCSS for styling
+Simple to-do list web app made using MERN stack with Vite for React and TailwindCSS for styling
 
 ## Requirements
 You need to have MongoDB and Node.js installed to use this app
@@ -14,3 +14,11 @@ You need to have MongoDB and Node.js installed to use this app
 
 ## Note
 This is just a barebones to-do-list app where it just works and the design is not polished yet. Feel free to create a feature branch and submit a PR if you want to make improvements and merge it for me.
+
+## Upcoming features
+- Better UI
+- Responsive
+- RHF for form
+- HeadlessUI
+- Delete confirmation
+- User authentication
