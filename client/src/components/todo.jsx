@@ -1,3 +1,6 @@
+import { Button } from "@headlessui/react";
+import ConfirmationModal from "../components/confirmation-modal";
+
 export default function Todo(props) {
     // Refactor time
     const time = new Date(props.todo.createdAt);
@@ -40,8 +43,8 @@ export default function Todo(props) {
             <div className="flex justify-between items-center">
                 <p>by {props.todo.user} on {date} at {timeString}</p>
                 <div>
-                    <button onClick={toggleComplete} className="bg-blue-600 text-white p-2">Toggle complete</button>
-                    <button onClick={deleteTodo} className="bg-red-600 text-white p-2">Toggle delete</button>
+                    <Button onClick={toggleComplete} className="bg-blue-600 px-4 py-2 text-sm font-medium text-white focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-blue-600/30">Toggle complete</Button>
+                    <ConfirmationModal dialogButton="Delete" dialogTitle="Delete todo?" dialogDescription="Are you sure you want to delete this todo?" onYes={deleteTodo} />
                 </div>
             </div>
         </div>

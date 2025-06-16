@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import TodoList from './components/to-do-list'
+import TodoList from './pages/to-do-list'
 import './App.css'
-import AddItems from './components/add-items';
+import AddItems from './pages/add-items';
 
 export default function App() {
     return (
