@@ -7,28 +7,36 @@ export default function Todo(props) {
     const date = time.toLocaleDateString();
     const timeString = time.toLocaleTimeString();
 
-    const toggleComplete = () => {
-        fetch(`http://localhost:3200/api/todos/${props.todo._id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            }
-        })
+    const toggleComplete = async () => {
+        try {
+            await fetch(`http://localhost:3200/api/todos/${props.todo._id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            });
 
-        // rerender the page
-        window.location.reload();
+            // rerender the page after the request completes
+            window.location.reload();
+        } catch (error) {
+            console.error(error);
+        }
     }
 
-    const deleteTodo = () => {
-        fetch(`http://localhost:3200/api/todos/${props.todo._id}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-            }
-        })
+    const deleteTodo = async () => {
+        try {
+            await fetch(`http://localhost:3200/api/todos/${props.todo._id}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            });
 
-        // rerender the page
-        window.location.reload();
+            // rerender the page after the request completes
+            window.location.reload();
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     return (
